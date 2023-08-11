@@ -7,6 +7,7 @@ import 'package:study_app/routes/app_routes.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   InitialBindings().dependencies();
+
   runApp(const MyApp());
 }
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: Get.find<ThemeController>().darkTheme,
+      theme: Get.find<ThemeController>().lightTheme,
       getPages: AppRoutes.routes(),
     );
   }
