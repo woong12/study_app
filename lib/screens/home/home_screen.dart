@@ -17,16 +17,7 @@ class HomeScreen extends StatelessWidget {
               child: SizedBox(
                 width: 200,
                 height: 200,
-                child:
-
-                    //  FadeInImage(
-                    //   image: NetworkImage(
-                    //       _questionPaperController.allPaperImages[index]),
-                    //   placeholder:
-                    //       const AssetImage("assets/images/app_splash_logo.png"),
-                    // ),
-
-                    CachedNetworkImage(
+                child: CachedNetworkImage(
                   imageUrl: questionPaperController.allPapers[index].imageUrl!,
                   placeholder: (context, url) => Container(
                     alignment: Alignment.center,
@@ -43,7 +34,6 @@ class HomeScreen extends StatelessWidget {
           separatorBuilder: (BuildContext context, int index) {
             return const SizedBox(height: 20);
           },
-          // itemCount: _questionPaperController.allPaperImages.length,
           itemCount: questionPaperController.allPapers.length,
         ),
       ),
