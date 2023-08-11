@@ -23,9 +23,17 @@ class QuestionPaperController extends GetxController {
       "physics",
     ];
     try {
+      // await Firebase.initializeApp();
+      // for (var img in imgName) {
+      //   final imgUrl = await Get.find<FirebaseStorageService>().getImage(img);
+      //   allPaperImages.add(imgUrl!);
+      // }
+
+      // await Firebase.initializeApp();
+
       QuerySnapshot<Map<String, dynamic>> data = await questionPaperRF.get();
       final paperList = data.docs
-          .map((paper) => QuestionPaperModel.fromSnapShot(paper))
+          .map((paper) => QuestionPaperModel.fromSnapshot(paper))
           .toList();
       allPapers.assignAll(paperList);
 

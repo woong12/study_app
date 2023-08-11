@@ -30,13 +30,13 @@ class QuestionPaperModel {
             .map((dynamic e) => Questions.fromJson(e as Map<String, dynamic>))
             .toList();
 
-  QuestionPaperModel.fromSnapShot(DocumentSnapshot<Map<String, dynamic>> json)
+  QuestionPaperModel.fromSnapshot(DocumentSnapshot<Map<String, dynamic>> json)
       : id = json.id,
         title = json['title'],
         imageUrl = json['image_url'],
         description = json['Description'],
         timeSeconds = json['time_seconds'],
-        questionCount = json['question_count'] as int,
+        questionCount = json['questions_count'] as int,
         questions = [];
 
   Map<String, dynamic> toJson() {
