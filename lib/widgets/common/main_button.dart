@@ -22,7 +22,7 @@ class MainButton extends StatelessWidget {
     return Material(
       type: MaterialType.transparency,
       child: SizedBox(
-        height: 55,
+        height: 60,
         child: InkWell(
           onTap: enabled == false ? null : onTap,
           child: Container(

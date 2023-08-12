@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/src/simple/get_view.dart';
+import 'package:get/get.dart';
 
 import '../../configs/themes/app_colors.dart';
 import '../../configs/themes/ui_parameters.dart';
@@ -36,6 +36,27 @@ class MyMenuScreen extends GetView<MyZoomDrawerController> {
                   },
                 ),
               ),
+              Padding(
+                padding: EdgeInsets.only(
+                  right: MediaQuery.of(context).size.width * 0.3,
+                ),
+                child: Column(
+                  children: [
+                    Obx(
+                      () => controller.user.value == null
+                          ? const SizedBox()
+                          : Text(
+                              controller.user.value!.displayName ?? "",
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w900,
+                                fontSize: 18,
+                                color: onSurfaceTextColor,
+                              ),
+                            ),
+                    ),
+                  ],
+                ),
+              )
             ],
           ),
         ),

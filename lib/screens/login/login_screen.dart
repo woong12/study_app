@@ -29,12 +29,13 @@ class LoginScreen extends GetView<AuthController> {
               height: 200,
             ),
             const Padding(
-              padding: EdgeInsets.symmetric(vertical: 60),
+              padding: EdgeInsets.symmetric(vertical: 70),
               child: Text(
                 "This is a study app. You can use as you want. You have the full access to all the materials in this course",
                 style: TextStyle(
                   color: onSurfaceTextColor,
                   fontWeight: FontWeight.bold,
+                  fontSize: 17,
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -57,6 +58,7 @@ class LoginScreen extends GetView<AuthController> {
                       style: TextStyle(
                         color: Theme.of(context).primaryColor,
                         fontWeight: FontWeight.bold,
+                        fontSize: 16,
                       ),
                     ),
                   ),
