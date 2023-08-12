@@ -6,6 +6,7 @@ import 'package:study/screens/home/home_screen.dart';
 
 import '../firebase_ref/references.dart';
 import '../screens/login/login_screen.dart';
+import '../utils/app_logger.dart';
 import '../widgets/dialogs/dialogue_widget.dart';
 
 class AuthController extends GetxController {
@@ -50,8 +51,7 @@ class AuthController extends GetxController {
         navigateToHomePage();
       }
     } on Exception catch (error) {
-      // AppLogger.e(error);
-      Logger().e(error);
+      AppLogger.e(error);
     }
   }
 
@@ -74,7 +74,7 @@ class AuthController extends GetxController {
       await _auth.signOut();
       navigateToHomePage();
     } on FirebaseAuthException catch (e) {
-      Logger().e(e);
+      AppLogger.e(e);
     }
   }
 

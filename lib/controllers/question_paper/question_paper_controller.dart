@@ -1,10 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
-import 'package:logger/logger.dart';
 
 import '../../firebase_ref/references.dart';
 import '../../models/question_paper_model.dart';
 import '../../services/firebase_storage_service.dart';
+import '../../utils/app_logger.dart';
 import '../auth_controller.dart';
 
 class QuestionPaperController extends GetxController {
@@ -38,7 +38,7 @@ class QuestionPaperController extends GetxController {
       }
       allPapers.assignAll(paperList);
     } catch (e) {
-      Logger().e(e);
+      AppLogger.e(e);
     }
   }
 

@@ -42,7 +42,7 @@ dependencies:
   flutter_zoom_drawer: ^2.1.2
   firebase_auth: ^4.7.2
   url_launcher: ^6.1.12
-  logger: ^2.0.1
+  logger: ^1.0.0
   google_sign_in: ^6.1.4
   flutter_svg: ^2.0.7
 
