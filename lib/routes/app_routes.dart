@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:study/screens/login/login_screen.dart';
 
 import '../controllers/question_paper/question_paper_controller.dart';
 import '../controllers/zoom_drawer_controller.dart';
@@ -23,6 +24,10 @@ class AppRoutes {
             Get.put(QuestionPaperController());
             Get.put(MyZoomDrawerController());
           }),
+        ),
+        GetPage(
+          name: LoginScreen.routeName,
+          page: () => const LoginScreen(),
         ),
       ];
 }
