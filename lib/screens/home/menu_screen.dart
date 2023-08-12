@@ -54,6 +54,31 @@ class MyMenuScreen extends GetView<MyZoomDrawerController> {
                               ),
                             ),
                     ),
+                    const Spacer(flex: 1),
+                    _DrawerButton(
+                      icon: Icons.web,
+                      label: "website",
+                      onPressed: () => controller.website(),
+                    ),
+                    _DrawerButton(
+                      icon: Icons.facebook,
+                      label: "facebook",
+                      onPressed: () => controller.facebook(),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 25),
+                      child: _DrawerButton(
+                        icon: Icons.email,
+                        label: "email",
+                        onPressed: () => controller.email(),
+                      ),
+                    ),
+                    const Spacer(flex: 4),
+                    _DrawerButton(
+                      icon: Icons.logout,
+                      label: "logout",
+                      onPressed: () => controller.signOut(),
+                    ),
                   ],
                 ),
               )
@@ -61,6 +86,30 @@ class MyMenuScreen extends GetView<MyZoomDrawerController> {
           ),
         ),
       ),
+    );
+  }
+}
+
+class _DrawerButton extends StatelessWidget {
+  const _DrawerButton({
+    required this.icon,
+    required this.label,
+    this.onPressed,
+  });
+
+  final IconData icon;
+  final String label;
+  final VoidCallback? onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton.icon(
+      onPressed: onPressed,
+      icon: Icon(
+        icon,
+        size: 15,
+      ),
+      label: Text(label),
     );
   }
 }

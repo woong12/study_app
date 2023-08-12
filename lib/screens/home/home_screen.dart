@@ -16,6 +16,8 @@ import 'menu_screen.dart';
 class HomeScreen extends GetView<MyZoomDrawerController> {
   const HomeScreen({super.key});
 
+  static const String routeName = "/home";
+
   @override
   Widget build(BuildContext context) {
     QuestionPaperController questionPaperController = Get.find();
