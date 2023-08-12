@@ -11,10 +11,8 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   InitialBindings().dependencies();
   await Firebase.initializeApp(
-    // name: "study-app",
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  // await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -30,17 +28,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-// Future<void> main() async {
-//   WidgetsFlutterBinding.ensureInitialized();
-//   // await Firebase.initializeApp(
-//   //     name: "study-app", options: DefaultFirebaseOptions.currentPlatform);
-//   await Firebase.initializeApp();
-
-//   runApp(
-//     GetMaterialApp(
-//       debugShowCheckedModeBanner: false,
-//       home: DataUploaderScreen(),
-//     ),
-//   );
-// }
