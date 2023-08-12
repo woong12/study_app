@@ -4,9 +4,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:study_app/firebase_ref/loading_status.dart';
-import 'package:study_app/firebase_ref/references.dart';
-import 'package:study_app/models/question_paper_model.dart';
+
+import '../../firebase_ref/loading_status.dart';
+import '../../firebase_ref/references.dart';
+import '../../models/question_paper_model.dart';
 
 class DataUploader extends GetxController {
   @override

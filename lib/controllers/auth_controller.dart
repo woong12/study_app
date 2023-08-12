@@ -2,9 +2,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:logger/logger.dart';
-import 'package:study_app/widgets/dialogs/dialogue_widget.dart';
 
 import '../firebase_ref/references.dart';
+import '../screens/login/login_screen.dart';
+import '../widgets/dialogs/dialogue_widget.dart';
 
 class AuthController extends GetxController {
   @override
@@ -68,10 +69,14 @@ class AuthController extends GetxController {
     Get.dialog(
       Dialogs.questionStartDialogue(onTap: () {
         Get.back();
-        // NavigateToLoginPage
+        navigateToLoginPage();
       }),
       barrierDismissible: false,
     );
+  }
+
+  void navigateToLoginPage() {
+    Get.toNamed(LoginScreen.routeName);
   }
 
   bool isLoggedIn() {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:study_app/widgets/app_circle_button.dart';
 
 import '../../configs/themes/app_colors.dart';
+import '../../widgets/app_circle_button.dart';
 
 class IntroductionScreen extends StatelessWidget {
   const IntroductionScreen({super.key});

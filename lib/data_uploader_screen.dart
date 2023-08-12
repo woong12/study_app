@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:study_app/controllers/question_paper/data_uploader.dart';
-import 'package:study_app/firebase_ref/loading_status.dart';
+
+import 'controllers/question_paper/data_uploader.dart';
+import 'firebase_ref/loading_status.dart';
 
 class DataUploaderScreen extends StatelessWidget {
-  DataUploaderScreen({super.key});
+  DataUploaderScreen({Key? key}) : super(key: key);
+
   DataUploader controller = Get.put(DataUploader());
 
   @override
@@ -15,7 +17,7 @@ class DataUploaderScreen extends StatelessWidget {
           () => Text(
             controller.loadingStatus.value == LoadingStatus.completed
                 ? "Uploading completed"
-                : "uploading...",
+                : "Uploading...",
           ),
         ),
       ),

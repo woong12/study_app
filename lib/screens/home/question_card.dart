@@ -1,13 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:study_app/configs/themes/app_icons.dart';
-import 'package:study_app/configs/themes/ui_parameters.dart';
-import 'package:study_app/controllers/question_paper/question_paper_controller.dart';
-import 'package:study_app/widgets/app_icon_text.dart';
 
+import '../../configs/themes/app_icons.dart';
 import '../../configs/themes/custom_text_styles.dart';
+import '../../configs/themes/ui_parameters.dart';
+import '../../controllers/question_paper/question_paper_controller.dart';
 import '../../models/question_paper_model.dart';
+import '../../widgets/app_icon_text.dart';
 
 class QuestionCard extends GetView<QuestionPaperController> {
   const QuestionCard({

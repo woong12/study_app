@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
-import 'package:study_app/controllers/question_paper/question_paper_controller.dart';
-import 'package:study_app/controllers/zoom_drawer_controller.dart';
-import 'package:study_app/screens/home/home_screen.dart';
-import 'package:study_app/screens/introduction/introduction_screen.dart';
 
+import '../controllers/question_paper/question_paper_controller.dart';
+import '../controllers/zoom_drawer_controller.dart';
+import '../screens/home/home_screen.dart';
+import '../screens/introduction/introduction_screen.dart';
 import '../screens/splash/splash_screen.dart';
 
 class AppRoutes {

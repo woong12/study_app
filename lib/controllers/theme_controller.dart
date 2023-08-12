@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
-import 'package:study_app/configs/themes/app_dark_theme.dart';
 
+import '../configs/themes/app_dark_theme.dart';
 import '../configs/themes/app_light_theme.dart';
 
 class ThemeController extends GetxController {

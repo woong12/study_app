@@ -1,21 +1,21 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 import 'package:logger/logger.dart';
-import 'package:study_app/controllers/auth_controller.dart';
-import 'package:study_app/models/question_paper_model.dart';
-import 'package:study_app/services/firebase_storage_service.dart';
 
 import '../../firebase_ref/references.dart';
+import '../../models/question_paper_model.dart';
+import '../../services/firebase_storage_service.dart';
+import '../auth_controller.dart';
 
 class QuestionPaperController extends GetxController {
+  final allPaperImages = <String>[].obs;
+  final allPapers = <QuestionPaperModel>[].obs;
+
   @override
   void onReady() {
     getAllPapers();
     super.onReady();
   }
-
-  final allPaperImages = <String>[].obs;
-  final allPapers = <QuestionPaperModel>[].obs;
 
   Future<void> getAllPapers() async {
     // List<String> imgName = [
