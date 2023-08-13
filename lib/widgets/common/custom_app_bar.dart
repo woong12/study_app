@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:study/configs/themes/custom_text_styles.dart';
+import 'package:study/configs/themes/ui_parameters.dart';
+import 'package:study/widgets/app_circle_button.dart';
+
+import '../../configs/themes/app_icons.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
@@ -20,16 +24,41 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Stack(
-        children: [
-          Positioned.fill(
-            child: titleWidget == null
-                ? Center(
-                    child: Text(title, style: appBarTS),
-                  )
-                : Center(child: titleWidget),
-          ),
-        ],
+      child: Padding(
+        padding: EdgeInsets.symmetric(
+          horizontal: mobileScreenPadding,
+          vertical: mobileScreenPadding,
+        ),
+        child: Stack(
+          children: [
+            Positioned.fill(
+              child: titleWidget == null
+                  ? Center(
+                      child: Text(title, style: appBarTS),
+                    )
+                  : Center(child: titleWidget),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                leading ??
+                    Transform.translate(
+                      offset: const Offset(-14, 0),
+                      child: const BackButton(),
+                    ),
+                if (showActionIcon)
+                  Transform.translate(
+                    offset: const Offset(10, 0),
+                    child: AppCircleButton(
+                      onTap: onMenuActionTap,
+                      child: const Icon(AppIcons.menu),
+                    ),
+                  ),
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

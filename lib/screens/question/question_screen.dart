@@ -10,6 +10,7 @@ import 'package:study/widgets/common/main_button.dart';
 import 'package:study/widgets/common/question_placeholder.dart';
 import 'package:study/widgets/content_area.dart';
 import 'package:study/widgets/questions/answer_card.dart';
+import 'package:study/widgets/questions/countdown_timer.dart';
 
 import '../../controllers/question_paper/questions_controller.dart';
 
@@ -22,8 +23,34 @@ class QuestionScreen extends GetView<QuestionsController> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: const CustomAppBar(
-        titleWidget: Text("Custo sdf"),
+      appBar: CustomAppBar(
+        leading: Container(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 8,
+            vertical: 4,
+          ),
+          decoration: const ShapeDecoration(
+            shape: StadiumBorder(
+              side: BorderSide(
+                color: onSurfaceTextColor,
+                width: 2,
+              ),
+            ),
+          ),
+          child: Obx(
+            () => CountdownTimer(
+              time: controller.time.value,
+              color: onSurfaceTextColor,
+            ),
+          ),
+        ),
+        showActionIcon: true,
+        titleWidget: Obx(
+          () => Text(
+            'Q ${(controller.questionIndex.value + 1).toString().padLeft(2, '0')}',
+            style: appBarTS,
+          ),
+        ),
       ),
       body: BackgroundDecoration(
         child: Obx(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:study/configs/themes/ui_parameters.dart';
 
 import 'app_colors.dart';
@@ -31,3 +32,11 @@ const appBarTS = TextStyle(
   fontSize: 16,
   color: onSurfaceTextColor,
 );
+
+TextStyle countdownTimerTS() => TextStyle(
+      letterSpacing: 2,
+      fontWeight: FontWeight.bold,
+      color: UIParameters.isDarkMode()
+          ? Theme.of(Get.context!).textTheme.bodyLarge!.color
+          : Theme.of(Get.context!).primaryColor,
+    );
