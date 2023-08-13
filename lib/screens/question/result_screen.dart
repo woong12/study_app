@@ -10,6 +10,7 @@ import 'package:study/widgets/questions/answer_card.dart';
 import 'package:study/widgets/questions/question_number_card.dart';
 
 import '../../controllers/question_paper/questions_controller.dart';
+import 'answer_check_screen.dart';
 
 class ResultScreen extends GetView<QuestionsController> {
   const ResultScreen({super.key});
@@ -83,6 +84,7 @@ class ResultScreen extends GetView<QuestionsController> {
                           status: status,
                           onTap: () {
                             controller.jumpToQuestion(index, isGoBack: false);
+                            Get.toNamed(AnswerCheckScreen.routeName);
                           },
                         );
                       },
