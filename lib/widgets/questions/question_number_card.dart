@@ -56,9 +56,9 @@ class QuestionNumberCard extends StatelessWidget {
           child: Text(
             '$index',
             style: TextStyle(
-              color: status == AnswerStatus.notanswered
-                  ? Theme.of(context).primaryColor
-                  : null,
+              color:
+                  status == AnswerStatus.answered ? Colors.white : Colors.black,
+              fontWeight: FontWeight.bold,
             ),
           ),
         ),

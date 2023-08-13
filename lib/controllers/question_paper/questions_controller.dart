@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:study/firebase_ref/loading_status.dart';
 import 'package:study/models/question_paper_model.dart';
+import 'package:study/screens/question/result_screen.dart';
 
 import '../../firebase_ref/references.dart';
 
@@ -91,6 +92,14 @@ class QuestionsController extends GetxController {
     return "$answered out of ${allQuestions.length} answered";
   }
 
+  void jumpToQuestion(int index, {bool isGoBack = true}) {
+    questionIndex.value = index;
+    currentQuestion.value = allQuestions[index];
+    if (isGoBack) {
+      Get.back();
+    }
+  }
+
   void nextQuestion() {
     if (questionIndex.value >= allQuestions.length - 1) return;
     questionIndex.value++;
@@ -106,7 +115,7 @@ class QuestionsController extends GetxController {
   _startTimer(int seconds) {
     const duration = Duration(seconds: 1);
     remainSeconds = seconds;
-    Timer.periodic(
+    _timer = Timer.periodic(
       duration,
       (Timer timer) {
         if (remainSeconds == 0) {
@@ -120,5 +129,10 @@ class QuestionsController extends GetxController {
         }
       },
     );
+  }
+
+  void complete() {
+    _timer!.cancel();
+    Get.offAndToNamed(ResultScreen.routeName);
   }
 }
