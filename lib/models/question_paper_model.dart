@@ -100,7 +100,7 @@ class Answers {
 
   Answers.fromSnapshot(QueryDocumentSnapshot<Map<String, dynamic>> snapshot)
       : identifier = snapshot['identifier'] as String?,
-        answer = snapshot['Answer'] as String?;
+        answer = snapshot['answer'] as String?;
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};

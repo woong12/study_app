@@ -47,11 +47,9 @@ class QuestionPaperController extends GetxController {
         Get.back();
         // Get.offNamed();
       } else {
-        print("Logged in");
         Get.toNamed(QuestionScreen.routeName, arguments: paper);
       }
     } else {
-      print("The title is ${paper.title}");
       authController.showLoginAlertDialogue();
     }
   }
