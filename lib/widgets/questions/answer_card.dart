@@ -2,6 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:study/configs/themes/app_colors.dart';
 import 'package:study/configs/themes/ui_parameters.dart';
 
+enum AnswerStatus {
+  correct,
+  wrong,
+  answered,
+  notanswered,
+}
+
 class AnswerCard extends StatelessWidget {
   final String answer;
   final bool isSelected;
@@ -33,6 +40,7 @@ class AnswerCard extends StatelessWidget {
           answer,
           style: TextStyle(
             color: isSelected ? onSurfaceTextColor : null,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ),
