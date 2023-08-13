@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 import '../../firebase_ref/references.dart';
 import '../../models/question_paper_model.dart';
+import '../../screens/question/question_screen.dart';
 import '../../services/firebase_storage_service.dart';
 import '../../utils/app_logger.dart';
 import '../auth_controller.dart';
@@ -47,7 +48,7 @@ class QuestionPaperController extends GetxController {
         // Get.offNamed();
       } else {
         print("Logged in");
-        //Get.toNamed();
+        Get.toNamed(QuestionScreen.routeName, arguments: paper);
       }
     } else {
       print("The title is ${paper.title}");
