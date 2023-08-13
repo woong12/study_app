@@ -100,11 +100,16 @@ class QuestionScreen extends GetView<QuestionsController> {
                       ),
                       Expanded(
                         child: Visibility(
+                          visible: controller.loadingStatus.value ==
+                              LoadingStatus.completed,
                           child: MainButton(
                             onTap: () {
-                              controller.nextQuestion();
+                              controller.isLastQuestion
+                                  ? Container()
+                                  : controller.nextQuestion();
                             },
-                            title: 'Next',
+                            title:
+                                controller.isLastQuestion ? 'Complete' : 'Next',
                           ),
                         ),
                       ),
