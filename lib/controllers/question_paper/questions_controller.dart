@@ -21,7 +21,7 @@ class QuestionsController extends GetxController {
   // Timer
   Timer? _timer;
   int remainSeconds = 1;
-  final time = '00.00'.obs;
+  final time = '15:00'.obs;
 
   @override
   void onReady() {
