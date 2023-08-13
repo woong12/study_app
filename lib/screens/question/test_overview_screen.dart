@@ -11,6 +11,8 @@ import 'package:study/widgets/questions/answer_card.dart';
 import 'package:study/widgets/questions/countdown_timer.dart';
 import 'package:study/widgets/questions/question_number_card.dart';
 
+import '../../configs/themes/app_colors.dart';
+
 class TestOverviewScreen extends GetView<QuestionsController> {
   const TestOverviewScreen({super.key});
 
@@ -76,15 +78,24 @@ class TestOverviewScreen extends GetView<QuestionsController> {
                 ),
               ),
             ),
-            ColoredBox(
-              color: Theme.of(context).scaffoldBackgroundColor,
-              child: Padding(
-                padding: UIParameters.mobileScreenPadding,
-                child: MainButton(
-                  onTap: () {
-                    controller.complete();
-                  },
-                  title: "Complete",
+            Container(
+              padding: UIParameters.mobileScreenPadding,
+              decoration: BoxDecoration(
+                color: customScaffoldColor(context),
+                borderRadius: const BorderRadius.vertical(
+                  bottom: Radius.circular(20),
+                ),
+              ),
+              child: ColoredBox(
+                color: customScaffoldColor(context),
+                child: Padding(
+                  padding: UIParameters.mobileScreenPadding / 2,
+                  child: MainButton(
+                    onTap: () {
+                      controller.complete();
+                    },
+                    title: "Complete",
+                  ),
                 ),
               ),
             ),

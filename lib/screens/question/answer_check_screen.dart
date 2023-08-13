@@ -35,19 +35,23 @@ class AnswerCheckScreen extends GetView<QuestionsController> {
           () => Column(
             children: [
               Expanded(
-                child: ContentArea(
+                child: MainContentArea(
                   child: SingleChildScrollView(
                     padding: const EdgeInsets.only(
                       top: 20,
                     ),
                     child: Column(
                       children: [
-                        Text(controller.currentQuestion.value!.question),
+                        Text(
+                          controller.currentQuestion.value!.question,
+                          style: const TextStyle(fontWeight: FontWeight.bold),
+                        ),
                         GetBuilder<QuestionsController>(
                           id: "answer_review_list",
                           builder: (_) {
                             return ListView.separated(
                               shrinkWrap: true,
+                              padding: const EdgeInsets.only(top: 25),
                               physics: const NeverScrollableScrollPhysics(),
                               itemBuilder: (_, index) {
                                 final answer = controller

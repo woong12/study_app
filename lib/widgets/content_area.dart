@@ -18,6 +18,40 @@ class ContentArea extends StatelessWidget {
     return Material(
       borderRadius: const BorderRadius.vertical(
         top: Radius.circular(20),
+      ),
+      clipBehavior: Clip.hardEdge,
+      type: MaterialType.transparency,
+      child: Ink(
+        decoration: BoxDecoration(
+          color: customScaffoldColor(context),
+        ),
+        padding: addPadding
+            ? EdgeInsets.only(
+                top: mobileScreenPadding,
+                left: mobileScreenPadding,
+                right: mobileScreenPadding)
+            : EdgeInsets.zero,
+        child: child,
+      ),
+    );
+  }
+}
+
+class MainContentArea extends StatelessWidget {
+  final bool addPadding;
+  final Widget child;
+
+  const MainContentArea({
+    super.key,
+    this.addPadding = true,
+    required this.child,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      borderRadius: const BorderRadius.vertical(
+        top: Radius.circular(20),
         bottom: Radius.circular(20),
       ),
       clipBehavior: Clip.hardEdge,

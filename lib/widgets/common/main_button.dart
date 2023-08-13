@@ -25,6 +25,8 @@ class MainButton extends StatelessWidget {
       child: SizedBox(
         height: 60,
         child: InkWell(
+          highlightColor: Colors.transparent,
+          splashColor: Colors.transparent,
           onTap: enabled == false ? null : onTap,
           child: Container(
             decoration: BoxDecoration(

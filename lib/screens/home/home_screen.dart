@@ -74,7 +74,7 @@ class HomeScreen extends GetView<MyZoomDrawerController> {
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 8),
-                        child: ContentArea(
+                        child: MainContentArea(
                           addPadding: false,
                           child: Obx(
                             () => ListView.separated(

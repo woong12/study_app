@@ -98,32 +98,41 @@ class ResultScreen extends GetView<QuestionsController> {
                 ),
               ),
             ),
-            ColoredBox(
-              color: Theme.of(context).scaffoldBackgroundColor,
-              child: Padding(
-                padding: UIParameters.mobileScreenPadding,
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: MainButton(
-                        onTap: () {
-                          controller.tryAgain();
-                        },
-                        color: onSurfaceTextColor,
-                        title: "Try again",
+            Container(
+              padding: UIParameters.mobileScreenPadding,
+              decoration: BoxDecoration(
+                color: customScaffoldColor(context),
+                borderRadius: const BorderRadius.vertical(
+                  bottom: Radius.circular(20),
+                ),
+              ),
+              child: ColoredBox(
+                color: customScaffoldColor(context),
+                child: Padding(
+                  padding: UIParameters.mobileScreenPadding / 2,
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: MainButton(
+                          onTap: () {
+                            controller.tryAgain();
+                          },
+                          color: onSurfaceTextColor,
+                          title: "Try again",
+                        ),
                       ),
-                    ),
-                    const SizedBox(width: 5),
-                    Expanded(
-                      child: MainButton(
-                        onTap: () {
-                          controller.saveTestResults();
-                        },
-                        color: onSurfaceTextColor,
-                        title: "Go home",
+                      const SizedBox(width: 10),
+                      Expanded(
+                        child: MainButton(
+                          onTap: () {
+                            controller.saveTestResults();
+                          },
+                          color: onSurfaceTextColor,
+                          title: "Go home",
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             )

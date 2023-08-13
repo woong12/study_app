@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:study/configs/themes/app_colors.dart';
 import 'package:study/configs/themes/custom_text_styles.dart';
-import 'package:study/configs/themes/ui_parameters.dart';
 import 'package:study/firebase_ref/loading_status.dart';
 import 'package:study/screens/question/test_overview_screen.dart';
 import 'package:study/widgets/common/background_decoration.dart';
@@ -13,6 +12,7 @@ import 'package:study/widgets/content_area.dart';
 import 'package:study/widgets/questions/answer_card.dart';
 import 'package:study/widgets/questions/countdown_timer.dart';
 
+import '../../configs/themes/ui_parameters.dart';
 import '../../controllers/question_paper/questions_controller.dart';
 
 class QuestionScreen extends GetView<QuestionsController> {
@@ -107,17 +107,23 @@ class QuestionScreen extends GetView<QuestionsController> {
                     ),
                   ),
                 ),
-              ColoredBox(
-                color: Theme.of(context).scaffoldBackgroundColor,
-                child: Padding(
-                  padding: UIParameters.mobileScreenPadding,
+              Container(
+                padding: UIParameters.mobileScreenPadding,
+                decoration: BoxDecoration(
+                  color: customScaffoldColor(context),
+                  borderRadius: const BorderRadius.vertical(
+                    bottom: Radius.circular(20),
+                  ),
+                ),
+                child: ColoredBox(
+                  color: customScaffoldColor(context),
                   child: Row(
                     children: [
                       Visibility(
                         visible: controller.isFirstQuestion,
                         child: SizedBox(
-                          width: 55,
-                          height: 55,
+                          width: 60,
+                          height: 60,
                           child: MainButton(
                             onTap: () {
                               controller.prevQuestion();
@@ -131,6 +137,7 @@ class QuestionScreen extends GetView<QuestionsController> {
                           ),
                         ),
                       ),
+                      const SizedBox(width: 10),
                       Expanded(
                         child: Visibility(
                           visible: controller.loadingStatus.value ==
@@ -146,6 +153,7 @@ class QuestionScreen extends GetView<QuestionsController> {
                           ),
                         ),
                       ),
+                      const SizedBox(width: 10),
                     ],
                   ),
                 ),
