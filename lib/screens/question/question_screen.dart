@@ -5,6 +5,7 @@ import 'package:study/configs/themes/custom_text_styles.dart';
 import 'package:study/configs/themes/ui_parameters.dart';
 import 'package:study/firebase_ref/loading_status.dart';
 import 'package:study/widgets/common/background_decoration.dart';
+import 'package:study/widgets/common/custom_app_bar.dart';
 import 'package:study/widgets/common/main_button.dart';
 import 'package:study/widgets/common/question_placeholder.dart';
 import 'package:study/widgets/content_area.dart';
@@ -20,6 +21,10 @@ class QuestionScreen extends GetView<QuestionsController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: const CustomAppBar(
+        titleWidget: Text("Custo sdf"),
+      ),
       body: BackgroundDecoration(
         child: Obx(
           () => Column(
